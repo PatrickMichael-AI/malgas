@@ -24,7 +24,7 @@ function Menu() {
         <p>A 20oz T-bone steak featuring both the strip and tenderloin, seasoned with cracked pepper and sea salt.</p>
       </div>
       <div className="menu-item">
-        <b>Sirloin - $24.99</b>
+        <b>Sirloin</b> - $24.99
         <p>A 10oz top sirloin steak, a leaner cut with full flavor, served with seasonal vegetables.</p>
       </div>
       <div className="menu-item">
@@ -65,7 +65,7 @@ function Menu() {
         <b>Bacon BBQ Burger - $16.99</b>
         <p>Angus beef topped with crispy bacon, cheddar cheese, onion rings, and our house-made BBQ sauce.</p>
       </div>
-      <div className="menu-item">
+      <div class="menu-item">
         <b>Mushroom Swiss Burger - $15.99</b>
         <p>Angus beef patty topped with sautéed mushrooms and melted Swiss cheese on a toasted pretzel bun.</p>
       </div>
@@ -121,6 +121,7 @@ function Menu() {
       </div>
 
       <h2>Desserts</h2>
+      <img src="/images/dessert.jpg" alt="dessert" style={{width: '100%'}} />
       <hr />
       <div className="menu-item">
         <b>Chocolate Lava Cake - $9.99</b>

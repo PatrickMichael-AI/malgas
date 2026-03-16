@@ -3,6 +3,8 @@ import './Home.css'
 function Home() {
   return (
     <div>
+      <p className="specials-banner">SPECIAL: 20% off all steaks on Tuesdays! Call (217) 555-0123 to reserve your table.</p>
+
       <img src="/images/hero-steak.jpg" alt="Steak" className="hero-image" />
 
       <h1>Welcome to The Oak and Barrel</h1>
@@ -15,7 +17,20 @@ function Home() {
         <img src="/images/sushi-plate.jpg" alt="Sushi" />
         <img src="/images/burger.jpg" alt="Burger" />
         <img src="/images/craft-beer.jpg" alt="Craft Beer" />
+        <img src="/images/wine-glass.jpg" alt="img2" />
       </div>
+
+      <h2>What Our Customers Say</h2>
+
+      <p>"Great food and friendly service. We come here every Friday night." - Jim and Susan M.</p>
+
+      <p>"The Oak Burger is the best burger I have ever had. Period." - Sarah K.</p>
+
+      <p>"We hosted our anniversary dinner here and it was perfect. The Tomahawk steak is incredible." - David R.</p>
+
+      <p>"Good beer selection and the sushi is surprisingly fresh for a steakhouse. Love this place." - Michelle T.</p>
+
+      <p>"Been coming here since they opened in 2010. Never had a bad meal." - Robert J.</p>
 
       <h2>Hours of Operation</h2>
       <p>Monday - Thursday: 11:00 AM - 9:00 PM</p>
@@ -25,6 +40,7 @@ function Home() {
       <h2>Location</h2>
       <p>123 Main Street, Springfield, IL 62701</p>
       <p>Phone: (217) 555-0123</p>
+      <p>Email: info@oakandbarrel.com</p>
     </div>
   )
 }
