@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import localFont from "next/font/local"
 
+import { BackToTopButton } from "@/components/back-to-top-button"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { siteConfig } from "@/content/site"
@@ -71,6 +72,7 @@ export default function RootLayout({
               {children}
             </div>
           </main>
+          <BackToTopButton />
           <SiteFooter />
         </div>
       </body>
