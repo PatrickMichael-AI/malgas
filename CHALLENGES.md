@@ -4,8 +4,8 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Audit Snapshot
 
-- Met: 22
-- Partial / Unverified: 2
+- Met: 24
+- Partial / Unverified: 1
 - To do: 9
 - Verification used for this audit: local `npm run lint` and `npm run build` both passed
 
@@ -29,7 +29,7 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 - [x] Create a proper hero section with text overlay on the home page image - current layered hero composition counts as meeting this criteria
 - [x] Add a sticky/fixed navigation bar
 - [x] Style the testimonials section with star ratings and card layouts
-- [ ] Add smooth scrolling and page transitions (Partial: smooth scrolling exists, page transitions do not)
+- [x] Add smooth scrolling and page transitions
 - [x] Create a proper image gallery with consistent sizing
 - [x] Add a "Back to Top" button
 - [x] Fix the CSS specificity conflicts between pages - verified clean under the current shared Tailwind and global-base styling model
@@ -50,7 +50,7 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 - [ ] Add a reservation system using localStorage (Missing)
 - [ ] Implement a shopping cart / order system (Missing)
-- [ ] Add Framer Motion or similar for page transitions (Missing)
+- [x] Add Framer Motion or similar for page transitions
 - [ ] Create a theme switcher with multiple color schemes (Missing)
 - [ ] Add internationalization (multi-language support) (Missing)
 - [ ] Achieve a perfect Lighthouse score (100/100/100/100) (Missing)
@@ -58,16 +58,15 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Remaining Work By Difficulty
 
-1. Add real page transitions; if implemented with Framer Motion, this can close both transition-related challenges.
-2. Add dark mode with a toggle.
-3. Add menu filtering/search, including the missing price and dietary metadata needed to support it.
-4. Add a multi-theme switcher with multiple color schemes.
-5. Add a `localStorage`-backed reservation system.
-6. Add internationalization.
-7. Verify deployment on Vercel/Netlify and custom-domain setup.
-8. Run Lighthouse and fix accessibility and performance issues.
-9. Add a shopping cart / ordering flow.
-10. Chase a perfect Lighthouse score.
+1. Add dark mode with a toggle.
+2. Add menu filtering/search, including the missing price and dietary metadata needed to support it.
+3. Add a multi-theme switcher with multiple color schemes.
+4. Add a `localStorage`-backed reservation system.
+5. Add internationalization.
+6. Verify deployment on Vercel/Netlify and custom-domain setup.
+7. Run Lighthouse and fix accessibility and performance issues.
+8. Add a shopping cart / ordering flow.
+9. Chase a perfect Lighthouse score.
 
 ---
 
