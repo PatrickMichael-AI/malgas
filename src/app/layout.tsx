@@ -10,22 +10,20 @@ import "./globals.css"
 
 const display = localFont({
   src: [
-    { path: "./fonts/DejaVuSerif.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/DejaVuSerif-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/PlayfairDisplaySC-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/PlayfairDisplaySC-Bold.ttf", weight: "700", style: "normal" },
   ],
   variable: "--font-display",
   display: "swap",
-  fallback: ["Georgia", "Times New Roman", "serif"],
 })
 
 const bodyFont = localFont({
   src: [
-    { path: "./fonts/UbuntuSans-Variable.ttf", style: "normal" },
-    { path: "./fonts/UbuntuSans-Italic-Variable.ttf", style: "italic" },
+    { path: "./fonts/Karla-VariableFont_wght.ttf", weight: "200 800", style: "normal" },
+    { path: "./fonts/Karla-Italic-VariableFont_wght.ttf", weight: "200 800", style: "italic" },
   ],
   variable: "--font-body",
   display: "swap",
-  fallback: ["Segoe UI", "Arial", "sans-serif"],
 })
 
 export const metadata: Metadata = {
@@ -65,11 +63,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${display.variable} ${bodyFont.variable}`}>
+      <body className={`${display.variable} ${bodyFont.variable} bg-background text-foreground antialiased`}>
         <div className="page-frame flex min-h-screen flex-col">
           <SiteHeader />
-          <main className="flex-1">
-            <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+          <main className="relative z-10 flex-1">
+            <div className="mx-auto w-full max-w-[90rem] px-4 pb-10 pt-8 sm:px-6 sm:pb-12 lg:px-8 lg:pb-14 lg:pt-14">
               {children}
             </div>
           </main>

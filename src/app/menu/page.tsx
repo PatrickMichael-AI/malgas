@@ -1,10 +1,49 @@
-import type { Metadata } from "next"
 import Image from "next/image"
+import type { Metadata } from "next"
+import { ArrowUpRight } from "lucide-react"
 
 import { CtaLink } from "@/components/cta-link"
 import { PageIntro } from "@/components/page-intro"
-import { menuCategories, menuCta, menuIntro } from "@/content/menu"
+import { SectionShell } from "@/components/section-shell"
+import { menuChapters, menuCta, menuIntro, menuSequence } from "@/content/menu"
 import { cn } from "@/lib/utils"
+
+const chapterToneClasses = {
+  paper: {
+    band: "paper",
+    aside: "bg-background/92",
+    item: "bg-card/88",
+  },
+  sea: {
+    band: "sea",
+    aside: "bg-background/86",
+    item: "bg-background/88",
+  },
+  sun: {
+    band: "sun",
+    aside: "bg-background/86",
+    item: "bg-background/88",
+  },
+  apricot: {
+    band: "apricot",
+    aside: "bg-background/86",
+    item: "bg-background/88",
+  },
+} as const
+
+const sequenceCardClasses = {
+  Start: "bg-background/92",
+  Main: "bg-sea/52 lg:translate-y-8",
+  Garden: "bg-sun/70",
+  Sweet: "bg-apricot/62 lg:translate-y-4",
+} as const
+
+const chapterIds = {
+  Start: "menu-start",
+  Main: "menu-main",
+  Garden: "menu-garden",
+  Sweet: "menu-sweet",
+} as const
 
 export const metadata: Metadata = {
   title: "Menu",
@@ -23,93 +62,158 @@ export const metadata: Metadata = {
 
 export default function MenuPage() {
   return (
-    <div className="space-y-8 pb-10">
+    <div className="space-y-10 pb-12 lg:space-y-14">
       <PageIntro
         eyebrow={menuIntro.eyebrow}
         title={menuIntro.title}
         body={menuIntro.body}
-        badge="Menu for long lunches"
+        badge={menuIntro.badge}
+        tone="sun"
+        className="lg:py-12"
         actions={
           <>
-            <CtaLink href="/contact">Plan your table</CtaLink>
-            <CtaLink href="/about" variant="secondary">
-              Read the story
-            </CtaLink>
+            {menuIntro.actions.map((action) => (
+              <CtaLink key={action.href} href={action.href} variant={action.variant}>
+                {action.label}
+              </CtaLink>
+            ))}
           </>
         }
         aside={
-          <div className="relative min-h-[22rem] sm:min-h-[26rem]">
-            <div className="absolute left-0 top-0 w-[72%] rounded-[2rem] border border-border/70 bg-card p-3 shadow-paper">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.7rem]">
+          <div className="relative min-h-[31rem] sm:min-h-[36rem] lg:min-h-[40rem]">
+            <div className="absolute left-0 top-[4%] z-10 w-[66%] -rotate-[3deg] rounded-[2.2rem] border border-border/70 bg-background/98 p-3 shadow-float">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.85rem]">
                 <Image
-                  src="/images/dessert.jpg"
-                  alt="Salt & Fynbos dessert course"
+                  src={menuIntro.images.primary.src}
+                  alt={menuIntro.images.primary.alt}
                   fill
                   className="object-cover"
-                  sizes="(min-width: 1024px) 20rem, 60vw"
+                  sizes="(min-width: 1024px) 20rem, 64vw"
                 />
               </div>
             </div>
-            <div className="absolute bottom-[4%] right-0 w-[48%] rounded-[2rem] border border-border/70 bg-sea/60 px-5 py-6 shadow-paper">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/55">
-                Dining rhythm
+
+            <div className="absolute right-[3%] top-[6%] z-30 w-[42%] rotate-[4deg] rounded-[2rem] border border-border/70 bg-background/98 p-3 shadow-float">
+              <div className="relative aspect-square overflow-hidden rounded-[1.65rem]">
+                <Image
+                  src={menuIntro.images.secondary.src}
+                  alt={menuIntro.images.secondary.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 14rem, 42vw"
+                />
+              </div>
+            </div>
+
+            <div className="absolute bottom-[7%] right-0 z-20 w-[46%] rounded-[2rem] border border-border/80 bg-background/97 px-5 py-5 text-ink shadow-[0_28px_70px_rgba(20,33,38,0.22)] backdrop-blur-xl sm:px-6 sm:py-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-foreground/82">
+                {menuIntro.callout.eyebrow}
               </p>
-              <p className="mt-3 font-display text-3xl leading-tight text-ink">
-                Built to be ordered in waves, not in a rush.
+              <p className="mt-3 max-w-[12ch] text-balance font-display text-[1.7rem] leading-[1.02] text-ink sm:text-[2rem]">
+                {menuIntro.callout.body}
               </p>
             </div>
           </div>
         }
       />
 
-      <section className="motion-enter motion-delay-1 grid gap-4 lg:grid-cols-2">
-        {menuCategories.map((category, index) => (
-          <article
-            key={category.name}
-            className={cn(
-              "rounded-[2.25rem] border border-border/70 p-5 shadow-paper sm:p-6",
-              index === 0
-                ? "bg-background/92"
-                : index === 1
-                  ? "bg-sea/45"
-                  : index === 2
-                    ? "bg-card"
-                    : "bg-apricot/55"
-            )}
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/55">
-              {category.note}
-            </p>
-            <h2 className="mt-4 font-display text-4xl text-ink">{category.name}</h2>
-            <p className="mt-3 text-sm leading-7 text-foreground/75">{category.description}</p>
-            <div className="mt-6 space-y-3">
-              {category.items.map((item) => (
-                <div
-                  key={item.name}
-                  className="rounded-[1.6rem] border border-border/60 bg-background/85 px-4 py-4"
-                >
-                  <p className="font-medium text-ink">{item.name}</p>
-                  <p className="mt-2 text-sm leading-7 text-foreground/75">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </article>
-        ))}
-      </section>
+      <SectionShell
+        eyebrow={menuSequence.eyebrow}
+        title={menuSequence.title}
+        body={menuSequence.body}
+        className="motion-delay-1 lg:py-12"
+      >
+        <div className="grid gap-4 lg:grid-cols-4">
+          {menuChapters.map((chapter) => (
+            <a
+              key={chapter.chapter}
+              href={`#${chapterIds[chapter.chapter]}`}
+              className={cn(
+                "postcard-panel group block rounded-[2rem] px-5 py-5 transition-[transform,box-shadow,border-color,background-color] duration-200 hover:-translate-y-1 hover:shadow-float focus-visible:-translate-y-1 focus-visible:shadow-float",
+                sequenceCardClasses[chapter.chapter]
+              )}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-foreground/72">
+                {chapter.chapter}
+              </p>
+              <h3 className="mt-3 font-display text-3xl leading-tight text-ink">{chapter.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-foreground/84">{chapter.summary}</p>
+              <span className="mt-5 inline-flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/74 transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:text-ink">
+                Jump to section
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </a>
+          ))}
+        </div>
+      </SectionShell>
 
-      <section className="motion-enter motion-delay-2 relative overflow-hidden rounded-[2.5rem] border border-border/70 bg-ink px-6 py-8 text-background shadow-float sm:px-8">
-        <div className="absolute right-0 top-0 h-40 w-40 translate-x-8 -translate-y-6 rounded-full bg-background/10" />
-        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-background/55">
-          Reservation cue
-        </p>
-        <h2 className="mt-3 max-w-2xl font-display text-4xl text-background">{menuCta.title}</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-background/78">{menuCta.body}</p>
-        <CtaLink href={menuCta.href} variant="sun" className="mt-6 text-ink">
-          {menuCta.label}
-        </CtaLink>
-      </section>
+      <div className="space-y-6 lg:space-y-8">
+        {menuChapters.map((chapter, index) => {
+          const toneClasses = chapterToneClasses[chapter.tone]
+
+          return (
+            <section key={chapter.chapter} id={chapterIds[chapter.chapter]} className="scroll-mt-32">
+              <SectionShell
+                eyebrow={chapter.chapter}
+                title={chapter.title}
+                body={chapter.description}
+                tone={toneClasses.band}
+                reverse={index % 2 === 1}
+                className={cn(
+                  index === 0 ? "motion-delay-2 lg:py-12" : index === 1 ? "motion-delay-3 lg:py-12" : "motion-delay-4 lg:py-12"
+                )}
+                aside={
+                  <div className="grid gap-4">
+                    <article className={cn("postcard-panel rounded-[2rem] px-5 py-5", toneClasses.aside)}>
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
+                        {chapter.moodTitle}
+                      </p>
+                      <p className="mt-3 font-display text-3xl leading-tight text-ink">
+                        {chapter.mood}
+                      </p>
+                    </article>
+
+                    <article className="postcard-panel rounded-[2rem] bg-card/92 px-5 py-5">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
+                        {chapter.noteTitle}
+                      </p>
+                      <p className="mt-3 text-sm leading-7 text-foreground/86">{chapter.note}</p>
+                    </article>
+                  </div>
+                }
+              >
+                <div className="grid gap-3 md:grid-cols-2">
+                  {chapter.items.map((item) => (
+                    <article
+                      key={item.name}
+                      className={cn(
+                        "rounded-[1.7rem] border border-border/60 px-4 py-4 shadow-paper",
+                        toneClasses.item
+                      )}
+                    >
+                      <p className="font-medium text-ink">{item.name}</p>
+                      <p className="mt-2 text-sm leading-7 text-foreground/84">{item.description}</p>
+                    </article>
+                  ))}
+                </div>
+              </SectionShell>
+            </section>
+          )
+        })}
+      </div>
+
+      <SectionShell
+        eyebrow={menuCta.eyebrow}
+        title={menuCta.title}
+        body={menuCta.body}
+        tone="ink"
+        className="motion-delay-4 lg:py-12"
+        actions={
+          <CtaLink href={menuCta.href} variant="sun" className="text-ink">
+            {menuCta.label}
+          </CtaLink>
+        }
+      />
     </div>
   )
 }
