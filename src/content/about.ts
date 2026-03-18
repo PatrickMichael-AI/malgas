@@ -109,7 +109,7 @@ export const aboutPantryBand = {
   },
   callout: {
     eyebrow: "House pantry",
-    body: "Preserves, herbs, orchard fruit, local pours, and the kind of detail guests remember later.",
+    body: "Preserves, orchard fruit, and local pours that linger in memory.",
     tone: "sea",
   },
   cards: [

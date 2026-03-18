@@ -2,7 +2,6 @@ import Image from "next/image"
 import type { Metadata } from "next"
 
 import { CtaLink } from "@/components/cta-link"
-import { EditorialImageStack } from "@/components/editorial-image-stack"
 import { PageIntro } from "@/components/page-intro"
 import { SectionShell } from "@/components/section-shell"
 import { aboutCta, aboutIntro, aboutPantryBand, aboutStoryChapters, milestones } from "@/content/about"
@@ -24,13 +23,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="space-y-8 pb-10">
+    <div className="space-y-10 pb-12 lg:space-y-14">
       <PageIntro
         eyebrow={aboutIntro.eyebrow}
         title={aboutIntro.title}
         body={aboutIntro.body}
         badge={aboutIntro.badge}
         tone="sea"
+        className="lg:py-12"
         actions={
           <>
             {aboutIntro.actions.map((action) => (
@@ -78,7 +78,7 @@ export default function AboutPage() {
         }
       />
 
-      <div className="space-y-4">
+      <div className="space-y-6 lg:space-y-8">
         {aboutStoryChapters.map((chapter, index) => (
           <SectionShell
             key={chapter.title}
@@ -87,7 +87,7 @@ export default function AboutPage() {
             body={chapter.body}
             tone={chapter.tone}
             reverse={index % 2 === 1}
-            className={index === 0 ? "motion-delay-1" : "motion-delay-2"}
+            className={index === 0 ? "motion-delay-1 lg:py-12" : "motion-delay-2 lg:py-12"}
             aside={
               <div className="grid gap-4">
                 {chapter.notes.map((note) => (
@@ -112,17 +112,45 @@ export default function AboutPage() {
         title={aboutPantryBand.title}
         body={aboutPantryBand.body}
         tone={aboutPantryBand.tone}
-        className="motion-delay-3"
+        className="motion-delay-3 lg:py-12"
         aside={
-          <EditorialImageStack
-            primary={aboutPantryBand.images.primary}
-            secondary={aboutPantryBand.images.secondary}
-            callout={aboutPantryBand.callout}
-            calloutClassName="sm:bottom-auto sm:left-auto sm:right-[3%] sm:top-[7%] sm:w-[43%]"
-          />
+          <div className="relative min-h-[33rem] sm:min-h-[38rem] lg:min-h-[42rem]">
+            <div className="absolute left-0 top-[4%] z-10 w-[66%] -rotate-[3deg] rounded-[2.2rem] border border-border/70 bg-background/98 p-3 shadow-float">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.85rem]">
+                <Image
+                  src={aboutPantryBand.images.primary.src}
+                  alt={aboutPantryBand.images.primary.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 20rem, 64vw"
+                />
+              </div>
+            </div>
+
+            <div className="absolute right-[3%] top-[6%] z-30 w-[42%] rotate-[4deg] rounded-[2rem] border border-border/70 bg-background/98 p-3 shadow-float">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.65rem]">
+                <Image
+                  src={aboutPantryBand.images.secondary.src}
+                  alt={aboutPantryBand.images.secondary.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 14rem, 42vw"
+                />
+              </div>
+            </div>
+
+            <div className="absolute bottom-[2%] right-0 z-20 w-[46%] rounded-[2rem] border border-border/80 bg-background/97 px-5 py-5 shadow-[0_28px_70px_rgba(20,33,38,0.22)] backdrop-blur-xl sm:bottom-[1%] sm:px-6 sm:py-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-foreground/82">
+                {aboutPantryBand.callout.eyebrow}
+              </p>
+              <p className="mt-3 max-w-[12ch] text-balance font-display text-[1.7rem] leading-[1.02] text-ink sm:text-[2rem]">
+                {aboutPantryBand.callout.body}
+              </p>
+            </div>
+          </div>
         }
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3 lg:gap-5">
           {aboutPantryBand.cards.map((card, index) => (
             <article
               key={card.title}
@@ -144,7 +172,7 @@ export default function AboutPage() {
         title={aboutCta.title}
         body={aboutCta.body}
         tone="ink"
-        className="motion-delay-4"
+        className="motion-delay-4 lg:py-12"
         actions={
           <>
             {aboutCta.actions.map((action, index) => (
@@ -164,7 +192,7 @@ export default function AboutPage() {
           </>
         }
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3 lg:gap-5">
           {milestones.map((milestone) => (
             <article key={milestone.label} className="rounded-[1.8rem] border border-background/12 bg-background/8 px-5 py-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-background/72">

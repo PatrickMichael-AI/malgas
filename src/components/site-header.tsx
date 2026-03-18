@@ -15,16 +15,16 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8 lg:pt-6">
       <div className="mx-auto max-w-[90rem] overflow-hidden rounded-[2.35rem] border border-border/70 bg-foam/85 shadow-tide backdrop-blur-xl">
-        <div className="border-b border-border/60 bg-background/55 px-4 py-2.5 sm:px-5">
+        <div className="border-b border-border/60 bg-background/55 px-4 py-2.5 sm:px-5 lg:px-6 lg:py-3">
           <div className="flex flex-wrap items-center justify-between gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.34em] text-foreground/74">
             <span>{siteConfig.location}</span>
             <span className="hidden md:inline">Long lunches, sunset suppers, coastal weekends</span>
           </div>
         </div>
 
-        <div className="px-4 py-4 sm:px-5">
+        <div className="px-4 py-4 sm:px-5 lg:px-6 lg:py-5">
           <div className="flex items-center justify-between gap-4">
             <Link
               href="/"

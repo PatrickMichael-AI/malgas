@@ -23,13 +23,14 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="space-y-8 pb-10">
+    <div className="space-y-10 pb-12 lg:space-y-14">
       <SectionShell
         eyebrow={contactHero.eyebrow}
         title={contactHero.title}
         body={contactHero.body}
         tone="ink"
         titleAs="h1"
+        className="lg:py-12"
         actions={
           <>
             {contactHero.actions.map((action, index) => (
@@ -49,7 +50,7 @@ export default function ContactPage() {
           </>
         }
         aside={
-          <div className="grid gap-4">
+          <div className="grid gap-5">
             <div className="relative mb-2 min-h-[31rem] sm:min-h-[36rem] lg:min-h-[39rem]">
               <div className="absolute left-0 top-[4%] z-10 w-[67%] -rotate-[3deg] rounded-[2.2rem] border border-border/70 bg-background/98 p-3 shadow-float">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[1.85rem]">
@@ -85,7 +86,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 lg:gap-5">
               {contactHero.cards.map((card) => (
                 <article key={card.title} className="postcard-panel rounded-[2rem] bg-background/10 px-5 py-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-background/72">
@@ -132,9 +133,9 @@ export default function ContactPage() {
         eyebrow={contactPlanningSection.eyebrow}
         title={contactPlanningSection.title}
         body={contactPlanningSection.body}
-        className="motion-delay-2"
+        className="motion-delay-2 lg:py-12"
         aside={
-          <div className="grid gap-4">
+          <div className="grid gap-4 lg:gap-5">
             {contactPlanningSection.channels.map((channel, index) => (
               <article
                 key={channel.title}
@@ -151,7 +152,7 @@ export default function ContactPage() {
           </div>
         }
       >
-        <div className="grid gap-4">
+        <div className="grid gap-4 lg:gap-5">
           <article className="postcard-panel rounded-[2rem] bg-card/92 px-5 py-5">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
               Best reasons to reach out
@@ -168,7 +169,7 @@ export default function ContactPage() {
             </div>
           </article>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3 lg:gap-5">
             {contactPlanningSection.notes.map((note) => (
               <article key={note.title} className="postcard-panel rounded-[2rem] bg-background/92 px-5 py-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
@@ -186,7 +187,7 @@ export default function ContactPage() {
         title={contactCta.title}
         body={contactCta.body}
         tone="sea"
-        className="motion-delay-3"
+        className="motion-delay-3 lg:py-12"
         actions={
           <>
             {contactCta.actions.map((action) => (

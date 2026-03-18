@@ -49,15 +49,15 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="space-y-8 pb-10">
-      <section className="story-shell motion-enter bg-background/92 px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+    <div className="space-y-10 pb-12 lg:space-y-14">
+      <section className="story-shell motion-enter bg-background/92 px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-14">
         <div className="story-orb left-[-4rem] top-[-2rem] h-36 w-36 bg-sun/55" />
         <div className="story-orb right-[18%] top-[12%] h-24 w-24 bg-apricot/35" />
         <div className="story-orb bottom-[-5rem] right-[-2rem] h-52 w-52 bg-sea/45" />
         <div className="scribble-ring left-[50%] top-[14%] h-16 w-16" />
 
-        <div className="relative grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div className="max-w-2xl space-y-6">
+        <div className="relative grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-14">
+          <div className="max-w-2xl space-y-7">
             <div className="flex flex-wrap gap-3">
               {homeHero.chips.map((chip) => (
                 <span key={chip} className="soft-chip">
@@ -87,7 +87,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-3">
               {homeHero.details.map((detail) => {
                 const Icon = iconMap[detail.icon]
 
@@ -107,7 +107,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[34rem] sm:min-h-[40rem]">
+          <div className="relative min-h-[34rem] sm:min-h-[40rem] lg:min-h-[42rem]">
             <div className="absolute left-0 top-0 w-[68%] rotate-[-3deg] rounded-[2.4rem] border border-border/70 bg-card p-4 shadow-float">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
                 <Image
@@ -157,8 +157,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="motion-enter motion-delay-1 grid gap-4 lg:grid-cols-[0.94fr_1.06fr]">
-        <article className="story-shell bg-sea/48 px-6 py-7 sm:px-8">
+      <section className="motion-enter motion-delay-1 grid gap-5 lg:grid-cols-[0.94fr_1.06fr] lg:gap-6">
+        <article className="story-shell bg-sea/48 px-6 py-8 sm:px-8 sm:py-9 lg:py-11">
           <div className="story-orb right-[-3rem] top-[18%] h-32 w-32 bg-background/40" />
           <div className="relative max-w-xl space-y-5">
             <span className="story-ribbon">{homePlaceChapter.eyebrow}</span>
@@ -177,7 +177,7 @@ export default function HomePage() {
           </div>
         </article>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3 lg:gap-5">
           {homePlaceChapter.cards.map((item, index) => (
             <article
               key={item.title}
@@ -199,10 +199,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="story-shell motion-enter motion-delay-2 bg-card px-6 py-8 sm:px-8 sm:py-10">
+      <section className="story-shell motion-enter motion-delay-2 bg-card px-6 py-8 sm:px-8 sm:py-10 lg:py-12">
         <div className="story-orb right-[8%] top-[12%] h-52 w-52 bg-apricot/26" />
         <div className="story-orb left-[42%] bottom-[-2rem] h-40 w-40 bg-sea/32" />
-        <div className="relative grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+        <div className="relative grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start lg:gap-12">
           <article className="max-w-lg space-y-5">
             <span className="story-ribbon">{homeMenuChapter.eyebrow}</span>
             <h2 className="font-display text-5xl leading-[0.92] text-ink">{homeMenuChapter.title}</h2>
@@ -213,7 +213,7 @@ export default function HomePage() {
             </CtaLink>
           </article>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
             {homeMenuChapter.cards.map((category) => (
               <article
                 key={category.title}
@@ -237,10 +237,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="motion-enter motion-delay-3 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-        <article className="story-shell bg-sun/74 px-6 py-8 sm:px-8">
+      <section className="motion-enter motion-delay-3 grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
+        <article className="story-shell bg-sun/74 px-6 py-8 sm:px-8 sm:py-9 lg:py-11">
           <div className="story-orb bottom-[-3rem] left-[-2rem] h-32 w-32 bg-background/30" />
-          <div className="relative grid gap-6 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
+          <div className="relative grid gap-7 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-10">
             <div className="space-y-4">
               <span className="story-ribbon">{homeStoryChapter.eyebrow}</span>
               <h2 className="font-display text-5xl leading-[0.92] text-ink">{homeStoryChapter.title}</h2>
@@ -277,7 +277,7 @@ export default function HomePage() {
           </div>
         </article>
 
-        <div className="grid gap-4">
+        <div className="grid gap-4 lg:gap-5">
           {testimonials.map((testimonial, index) => (
             <article
               key={testimonial.name}
@@ -311,10 +311,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="story-shell motion-enter motion-delay-4 bg-ink px-6 py-8 text-background sm:px-8">
+      <section className="story-shell motion-enter motion-delay-4 bg-ink px-6 py-8 text-background sm:px-8 sm:py-10 lg:py-12">
         <div className="story-orb right-[-3rem] top-[-3rem] h-44 w-44 bg-sun/16" />
         <div className="story-orb bottom-[-4rem] left-[-2rem] h-36 w-36 bg-sea/14" />
-        <div className="relative grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+        <div className="relative grid gap-7 lg:grid-cols-[0.88fr_1.12fr] lg:items-end lg:gap-10">
           <div className="max-w-2xl space-y-4">
             <span className="story-ribbon border-background/18 bg-background/12 text-background/86">
               {homeVisitChapter.eyebrow}
@@ -331,7 +331,7 @@ export default function HomePage() {
             </CtaLink>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
             <article className="postcard-panel bg-background/10 px-5 py-5">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-background/72">
                 {homeVisitChapter.location.eyebrow}

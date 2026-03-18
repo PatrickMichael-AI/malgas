@@ -1,5 +1,6 @@
 import Image from "next/image"
 import type { Metadata } from "next"
+import { ArrowUpRight } from "lucide-react"
 
 import { CtaLink } from "@/components/cta-link"
 import { PageIntro } from "@/components/page-intro"
@@ -37,6 +38,13 @@ const sequenceCardClasses = {
   Sweet: "bg-apricot/62 lg:translate-y-4",
 } as const
 
+const chapterIds = {
+  Start: "menu-start",
+  Main: "menu-main",
+  Garden: "menu-garden",
+  Sweet: "menu-sweet",
+} as const
+
 export const metadata: Metadata = {
   title: "Menu",
   description:
@@ -54,13 +62,14 @@ export const metadata: Metadata = {
 
 export default function MenuPage() {
   return (
-    <div className="space-y-8 pb-10">
+    <div className="space-y-10 pb-12 lg:space-y-14">
       <PageIntro
         eyebrow={menuIntro.eyebrow}
         title={menuIntro.title}
         body={menuIntro.body}
         badge={menuIntro.badge}
         tone="sun"
+        className="lg:py-12"
         actions={
           <>
             {menuIntro.actions.map((action) => (
@@ -112,72 +121,83 @@ export default function MenuPage() {
         eyebrow={menuSequence.eyebrow}
         title={menuSequence.title}
         body={menuSequence.body}
-        className="motion-delay-1"
+        className="motion-delay-1 lg:py-12"
       >
         <div className="grid gap-4 lg:grid-cols-4">
           {menuChapters.map((chapter) => (
-            <article
+            <a
               key={chapter.chapter}
-              className={cn("postcard-panel rounded-[2rem] px-5 py-5", sequenceCardClasses[chapter.chapter])}
+              href={`#${chapterIds[chapter.chapter]}`}
+              className={cn(
+                "postcard-panel group block rounded-[2rem] px-5 py-5 transition-[transform,box-shadow,border-color,background-color] duration-200 hover:-translate-y-1 hover:shadow-float focus-visible:-translate-y-1 focus-visible:shadow-float",
+                sequenceCardClasses[chapter.chapter]
+              )}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.26em] text-foreground/72">
                 {chapter.chapter}
               </p>
               <h3 className="mt-3 font-display text-3xl leading-tight text-ink">{chapter.title}</h3>
               <p className="mt-3 text-sm leading-7 text-foreground/84">{chapter.summary}</p>
-            </article>
+              <span className="mt-5 inline-flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/74 transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:text-ink">
+                Jump to section
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </a>
           ))}
         </div>
       </SectionShell>
 
-      <div className="space-y-4">
+      <div className="space-y-6 lg:space-y-8">
         {menuChapters.map((chapter, index) => {
           const toneClasses = chapterToneClasses[chapter.tone]
 
           return (
-            <SectionShell
-              key={chapter.chapter}
-              eyebrow={chapter.chapter}
-              title={chapter.title}
-              body={chapter.description}
-              tone={toneClasses.band}
-              reverse={index % 2 === 1}
-              className={cn(index === 0 ? "motion-delay-2" : index === 1 ? "motion-delay-3" : "motion-delay-4")}
-              aside={
-                <div className="grid gap-4">
-                  <article className={cn("postcard-panel rounded-[2rem] px-5 py-5", toneClasses.aside)}>
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
-                      {chapter.moodTitle}
-                    </p>
-                    <p className="mt-3 font-display text-3xl leading-tight text-ink">
-                      {chapter.mood}
-                    </p>
-                  </article>
+            <section key={chapter.chapter} id={chapterIds[chapter.chapter]} className="scroll-mt-32">
+              <SectionShell
+                eyebrow={chapter.chapter}
+                title={chapter.title}
+                body={chapter.description}
+                tone={toneClasses.band}
+                reverse={index % 2 === 1}
+                className={cn(
+                  index === 0 ? "motion-delay-2 lg:py-12" : index === 1 ? "motion-delay-3 lg:py-12" : "motion-delay-4 lg:py-12"
+                )}
+                aside={
+                  <div className="grid gap-4">
+                    <article className={cn("postcard-panel rounded-[2rem] px-5 py-5", toneClasses.aside)}>
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
+                        {chapter.moodTitle}
+                      </p>
+                      <p className="mt-3 font-display text-3xl leading-tight text-ink">
+                        {chapter.mood}
+                      </p>
+                    </article>
 
-                  <article className="postcard-panel rounded-[2rem] bg-card/92 px-5 py-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
-                      {chapter.noteTitle}
-                    </p>
-                    <p className="mt-3 text-sm leading-7 text-foreground/86">{chapter.note}</p>
-                  </article>
+                    <article className="postcard-panel rounded-[2rem] bg-card/92 px-5 py-5">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
+                        {chapter.noteTitle}
+                      </p>
+                      <p className="mt-3 text-sm leading-7 text-foreground/86">{chapter.note}</p>
+                    </article>
+                  </div>
+                }
+              >
+                <div className="grid gap-3 md:grid-cols-2">
+                  {chapter.items.map((item) => (
+                    <article
+                      key={item.name}
+                      className={cn(
+                        "rounded-[1.7rem] border border-border/60 px-4 py-4 shadow-paper",
+                        toneClasses.item
+                      )}
+                    >
+                      <p className="font-medium text-ink">{item.name}</p>
+                      <p className="mt-2 text-sm leading-7 text-foreground/84">{item.description}</p>
+                    </article>
+                  ))}
                 </div>
-              }
-            >
-              <div className="grid gap-3 md:grid-cols-2">
-                {chapter.items.map((item) => (
-                  <article
-                    key={item.name}
-                    className={cn(
-                      "rounded-[1.7rem] border border-border/60 px-4 py-4 shadow-paper",
-                      toneClasses.item
-                    )}
-                  >
-                    <p className="font-medium text-ink">{item.name}</p>
-                    <p className="mt-2 text-sm leading-7 text-foreground/84">{item.description}</p>
-                  </article>
-                ))}
-              </div>
-            </SectionShell>
+              </SectionShell>
+            </section>
           )
         })}
       </div>
@@ -187,7 +207,7 @@ export default function MenuPage() {
         title={menuCta.title}
         body={menuCta.body}
         tone="ink"
-        className="motion-delay-4"
+        className="motion-delay-4 lg:py-12"
         actions={
           <CtaLink href={menuCta.href} variant="sun" className="text-ink">
             {menuCta.label}
