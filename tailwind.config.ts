@@ -33,10 +33,13 @@ const config: Config = {
           foreground: "hsl(var(--accent-foreground))",
         },
         sand: "hsl(var(--sand))",
+        dune: "hsl(var(--dune))",
+        foam: "hsl(var(--foam))",
         fynbos: "hsl(var(--fynbos))",
         apricot: "hsl(var(--apricot))",
         sea: "hsl(var(--sea))",
         ink: "hsl(var(--ink))",
+        kelp: "hsl(var(--kelp))",
         sun: "hsl(var(--sun))",
       },
       borderRadius: {
@@ -45,16 +48,17 @@ const config: Config = {
         sm: "calc(var(--radius) - 6px)",
       },
       boxShadow: {
-        paper: "0 20px 45px rgba(38, 58, 66, 0.12)",
-        float: "0 28px 70px rgba(53, 81, 80, 0.16)",
+        paper: "0 24px 55px rgba(32, 56, 62, 0.1)",
+        float: "0 36px 88px rgba(24, 50, 58, 0.14)",
+        tide: "0 22px 48px rgba(18, 45, 52, 0.12)",
       },
       fontFamily: {
-        sans: ["var(--font-body)"],
-        display: ["var(--font-display)"],
+        sans: ["var(--font-body)", "sans-serif"],
+        display: ["var(--font-display)", "serif"],
       },
       backgroundImage: {
         "coast-wash":
-          "radial-gradient(circle at top left, rgba(255, 213, 128, 0.26), transparent 34%), radial-gradient(circle at top right, rgba(166, 220, 228, 0.38), transparent 26%), linear-gradient(180deg, rgba(255, 250, 243, 0.96), rgba(253, 248, 241, 1))",
+          "radial-gradient(circle at 12% 14%, rgba(255, 209, 145, 0.3), transparent 26%), radial-gradient(circle at 84% 16%, rgba(147, 201, 204, 0.28), transparent 22%), radial-gradient(circle at 72% 76%, rgba(211, 137, 102, 0.16), transparent 20%), linear-gradient(180deg, rgba(251, 247, 239, 0.98), rgba(245, 239, 229, 0.96))",
       },
     },
   },
