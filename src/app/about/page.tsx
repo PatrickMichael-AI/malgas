@@ -2,9 +2,17 @@ import Image from "next/image"
 import type { Metadata } from "next"
 
 import { CtaLink } from "@/components/cta-link"
+import { EditorialGallery } from "@/components/editorial-gallery"
 import { PageIntro } from "@/components/page-intro"
 import { SectionShell } from "@/components/section-shell"
-import { aboutCta, aboutIntro, aboutPantryBand, aboutStoryChapters, milestones } from "@/content/about"
+import {
+  aboutCta,
+  aboutGallery,
+  aboutIntro,
+  aboutPantryBand,
+  aboutStoryChapters,
+  milestones,
+} from "@/content/about"
 
 export const metadata: Metadata = {
   title: "About",
@@ -106,6 +114,13 @@ export default function AboutPage() {
           />
         ))}
       </div>
+
+      <EditorialGallery
+        eyebrow={aboutGallery.eyebrow}
+        title={aboutGallery.title}
+        body={aboutGallery.body}
+        items={aboutGallery.items}
+      />
 
       <SectionShell
         eyebrow={aboutPantryBand.eyebrow}

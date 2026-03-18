@@ -74,40 +74,40 @@
 
 ### Phase 1: Content Foundation
 
-- [ ] Add `AboutGalleryItem` to `src/content/about.ts`
-- [ ] Add `aboutGallery` section copy and the six exact gallery items
-- [ ] Reuse only existing curated images already in `public/images`
+- [x] Add `AboutGalleryItem` to `src/content/about.ts`
+- [x] Add `aboutGallery` section copy and the six exact gallery items
+- [x] Reuse only existing curated images already in `public/images`
 
 ### Phase 2: Gallery Component
 
-- [ ] Create `src/components/editorial-gallery.tsx`
-- [ ] Render a fixed-ratio `4:5` image card for every item
-- [ ] Keep card shell, padding, border radius, and caption spacing identical across all items
-- [ ] Use `next/image` with the shared `sizes` value
-- [ ] Keep the component server-rendered and interaction-free
+- [x] Create `src/components/editorial-gallery.tsx`
+- [x] Render a fixed-ratio `4:5` image card for every item
+- [x] Keep card shell, padding, border radius, and caption spacing identical across all items
+- [x] Use `next/image` with the shared `sizes` value
+- [x] Keep the component server-rendered and interaction-free
 
 ### Phase 3: About Page Integration
 
-- [ ] Import and mount `EditorialGallery` in `src/app/about/page.tsx`
-- [ ] Place it after the story chapters and before the pantry band
-- [ ] Use `tone="paper"` and `motion-delay-3 lg:py-12`
-- [ ] Do not change routing or site navigation
+- [x] Import and mount `EditorialGallery` in `src/app/about/page.tsx`
+- [x] Place it after the story chapters and before the pantry band
+- [x] Use `tone="paper"` and `motion-delay-3 lg:py-12`
+- [x] Do not change routing or site navigation
 
 ### Phase 4: Responsive Consistency
 
-- [ ] Verify 1-column layout on mobile
-- [ ] Verify 2-column layout on tablet
-- [ ] Verify 3-column layout on desktop
-- [ ] Confirm all cards remain visually equal in height because of the shared `aspect-[4/5]`
-- [ ] Confirm `object-cover` crops cleanly without awkward focal loss
-- [ ] Confirm there is no horizontal overflow
+- [x] Verify 1-column layout on mobile
+- [x] Verify 2-column layout on tablet
+- [x] Verify 3-column layout on desktop
+- [x] Confirm all cards remain visually equal in height because of the shared `aspect-[4/5]`
+- [x] Confirm `object-cover` crops cleanly without awkward focal loss
+- [x] Confirm there is no horizontal overflow
 
 ### Phase 5: Verification and Audit Update
 
-- [ ] Run `npm run lint`
-- [ ] Run `npm run build`
-- [ ] Update `CHALLENGES.md` to mark the gallery challenge complete
-- [ ] Confirm the remaining-work list is renumbered correctly
+- [x] Run `npm run lint`
+- [x] Run `npm run build`
+- [x] Update `CHALLENGES.md` to mark the gallery challenge complete
+- [x] Confirm the remaining-work list is renumbered correctly
 
 ## Test Plan
 
