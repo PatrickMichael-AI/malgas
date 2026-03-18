@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 42 60% 97%;
+  --foreground: 200 24% 28%;
+  --card: 0 0% 100%;
+  --card-foreground: 200 24% 28%;
+  --border: 36 32% 84%;
+  --input: 36 32% 84%;
+  --ring: 161 33% 34%;
+  --primary: 161 33% 34%;
+  --primary-foreground: 42 60% 97%;
+  --secondary: 193 59% 84%;
+  --secondary-foreground: 203 37% 19%;
+  --muted: 39 57% 92%;
+  --muted-foreground: 200 16% 42%;
+  --accent: 28 88% 78%;
+  --accent-foreground: 203 37% 19%;
+  --sand: 41 73% 88%;
+  --fynbos: 161 33% 34%;
+  --apricot: 28 88% 78%;
+  --sea: 193 59% 84%;
+  --ink: 203 37% 19%;
+  --sun: 45 91% 71%;
+  --radius: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 216, 145, 0.32), transparent 26%),
+    radial-gradient(circle at right top, rgba(166, 220, 228, 0.4), transparent 24%),
+    radial-gradient(circle at center right, rgba(122, 177, 156, 0.14), transparent 20%),
+    linear-gradient(180deg, #fffaf3 0%, #fcf7ef 100%);
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), "Segoe UI", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(245, 177, 121, 0.35);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer components {
+  .page-frame {
+    @apply relative overflow-hidden;
+  }
+
+  .page-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(39, 64, 71, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(39, 64, 71, 0.025) 1px, transparent 1px);
+    background-size: 30px 30px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 82%);
+  }
+
+  .page-frame::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255, 206, 112, 0.22), transparent 10%),
+      radial-gradient(circle at 85% 12%, rgba(166, 220, 228, 0.16), transparent 10%),
+      radial-gradient(circle at 72% 78%, rgba(116, 172, 151, 0.14), transparent 12%);
+    opacity: 0.8;
+  }
+
+  .hero-bloom {
+    @apply absolute rounded-full blur-3xl;
+  }
+
+  .soft-chip {
+    @apply inline-flex items-center rounded-full border border-border/60 bg-background/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-foreground/60 shadow-paper transition-transform duration-200;
+  }
+
+  .field-shell {
+    @apply rounded-[1.5rem] border border-border/70 bg-background/85 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] transition-[border-color,box-shadow,transform,background-color] duration-200;
+  }
+
+  .field-shell:focus-within {
+    border-color: hsl(var(--ring) / 0.55);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      0 0 0 4px rgba(104, 150, 133, 0.12);
+  }
+
+  .field-label {
+    @apply text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-foreground/55;
+  }
+
+  .field-input {
+    @apply mt-3 w-full border-0 bg-transparent p-0 text-sm text-ink placeholder:text-foreground/45 focus:outline-none focus:ring-0;
+    caret-color: hsl(var(--ring));
+  }
+
+  .field-textarea {
+    @apply mt-3 w-full resize-none border-0 bg-transparent p-0 text-sm text-ink placeholder:text-foreground/45 focus:outline-none focus:ring-0;
+    caret-color: hsl(var(--ring));
+  }
+
+  .editorial-card {
+    @apply rounded-[2rem] border border-border/70 bg-card shadow-paper transition-[transform,box-shadow,background-color] duration-300 ease-out;
+  }
+
+  .wash-panel {
+    background:
+      radial-gradient(circle at top left, rgba(255, 219, 146, 0.38), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(166, 220, 228, 0.34), transparent 24%),
+      rgba(255, 255, 255, 0.75);
+  }
+
+  .motion-enter {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .motion-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .motion-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .motion-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  .motion-delay-4 {
+    animation-delay: 0.32s;
+  }
+}
+
+@media (hover: hover) {
+  .soft-chip:hover {
+    transform: translateY(-2px);
+  }
+
+  .field-shell:hover {
+    transform: translateY(-2px);
+  }
+
+  .editorial-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 26px 60px rgba(26, 53, 62, 0.12),
+      0 10px 22px rgba(26, 53, 62, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-bloom {
+    animation: bloom-drift 16s ease-in-out infinite alternate;
+  }
+
+  .page-frame::after {
+    animation: background-drift 20s ease-in-out infinite alternate;
+  }
+
+  .motion-enter {
+    animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .motion-enter {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bloom-drift {
+  from {
+    transform: scale(0.96) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.06) translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes background-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -10px, 0);
+  }
+}

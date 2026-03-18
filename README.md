@@ -1,16 +1,32 @@
-# React + Vite
+# Salt & Fynbos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Phase 1 foundation for the Salt & Fynbos frontend redesign.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Next.js App Router
+- React 19
+- TypeScript
+- Tailwind CSS
+- `shadcn/ui`-ready configuration
 
-## React Compiler
+## What Phase 1 includes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Vercel-friendly Next.js project structure
+- Global layout, metadata, and file-based app routing
+- Brand token foundation for the Salt & Fynbos design system
+- Route shell for `/`, `/menu`, `/about`, `/contact`, and `not-found`
+- `next/font` and `next/image` integration
 
-## Expanding the ESLint configuration
+## Install and run
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Notes
+
+- The previous Vite SPA scaffold has been removed.
+- This workspace could not fetch npm packages during the migration because outbound registry access was unavailable, so `package-lock.json` was not regenerated here.
+- After dependencies are installed in a networked environment, run `npm run build` and `npm run lint` to verify the foundation.
