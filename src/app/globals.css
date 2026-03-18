@@ -80,7 +80,7 @@ a {
 
 @layer components {
   .page-frame {
-    @apply relative overflow-hidden;
+    @apply relative overflow-x-hidden;
   }
 
   .page-frame::before {
