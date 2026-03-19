@@ -737,13 +737,13 @@ export function InquiryFormShell() {
             <div className="mt-5 space-y-3">
               {!hasLoadedReservations ? (
                 <article className="rounded-[1.6rem] border border-border/60 bg-card/92 px-4 py-4">
-                  <p className="text-sm leading-7 text-foreground/82">
+                  <p className="text-sm leading-7 text-foreground/90">
                     Loading saved reservations from this device.
                   </p>
                 </article>
               ) : savedReservations.length === 0 ? (
                 <article className="rounded-[1.6rem] border border-border/60 bg-card/92 px-4 py-4">
-                  <p className="text-sm leading-7 text-foreground/82">
+                  <p className="text-sm leading-7 text-foreground/90">
                     No reservations have been saved on this device yet.
                   </p>
                 </article>
@@ -768,7 +768,7 @@ export function InquiryFormShell() {
                           </p>
                           <p className="text-sm leading-7 text-foreground/85">{reservation.email}</p>
                         </div>
-                        <p className="text-sm leading-7 text-foreground/82">
+                        <p className="text-sm leading-7 text-foreground/90">
                           {reservation.notes || "No extra notes yet."}
                         </p>
                       </div>

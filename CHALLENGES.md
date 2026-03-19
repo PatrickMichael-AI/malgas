@@ -1,11 +1,11 @@
-# The Oak and Barrel — UI/UX Challenge
+# The Salt & Fynbos (Oak and Barrel)— UI/UX Challenge
 
 This checklist predates the current Salt & Fynbos redesign. The repo is no longer the original bland starter, so this file now tracks what the project has already met versus what is still open.
 
 ## Audit Snapshot
 
 - Met: 29
-- Partial / Unverified: 0
+- Partial / Unverified: 1
 - To do: 4
 - Verification used for this audit: local `npm run lint`, local `npm run build`, and manual browser verification of the reservation flow
 
@@ -15,9 +15,9 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 - Accessibility, Best Practices, and SEO scored `100` across the audited routes throughout the audit pass.
 - Final recorded mobile Performance scores were:
   - `/`: `85`
-  - `/menu`: `74`
-  - `/about`: `78`
-  - `/contact`: `76`
+  - `/menu`: `81`
+  - `/about`: `88`
+  - `/contact`: `86`
 - The biggest shipped wins came from shared loading changes rather than visual simplification:
   - reduced root font preload cost
   - disabled body-font preload
@@ -70,7 +70,7 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 - [x] Add Framer Motion or similar for page transitions
 - [ ] Create a theme switcher with multiple color schemes (Missing)
 - [ ] Add internationalization (multi-language support) (Missing)
-- [ ] Achieve a perfect Lighthouse score (100/100/100/100) (Missing)
+- [ ] Achieve a perfect Lighthouse score (100/100/100/100) (Partially met: mobile audits completed for `/`, `/menu`, `/about`, and `/contact`; accessibility, best practices, and SEO now score `100` across the audited routes)
 - [x] Deploy to Vercel/Netlify with a custom domain
 
 ## Remaining Work By Difficulty
@@ -78,8 +78,9 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 1. Add a multi-theme switcher with multiple color schemes.
 2. Add internationalization.
 3. Add a shopping cart / ordering flow.
-4. Chase a perfect Lighthouse score.
+4. Chase a perfect Lighthouse score (Partially met: mobile audits completed for `/`, `/menu`, `/about`, and `/contact`; accessibility, best practices, and SEO now score `100` across the audited routes).
 
 ---
 
-Good luck! Share your results with the community.
+Thank you Leaon!
+
