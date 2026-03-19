@@ -4,10 +4,27 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Audit Snapshot
 
-- Met: 28
+- Met: 29
 - Partial / Unverified: 0
-- To do: 5
-- Verification used for this audit: local `npm run lint` and `npm run build` both passed
+- To do: 4
+- Verification used for this audit: local `npm run lint`, local `npm run build`, and manual browser verification of the reservation flow
+
+## Lighthouse Audit Summary
+
+- Mobile Lighthouse audits were recorded for `/`, `/menu`, `/about`, and `/contact`.
+- Accessibility, Best Practices, and SEO scored `100` across the audited routes throughout the audit pass.
+- Final recorded mobile Performance scores were:
+  - `/`: `85`
+  - `/menu`: `74`
+  - `/about`: `78`
+  - `/contact`: `76`
+- The biggest shipped wins came from shared loading changes rather than visual simplification:
+  - reduced root font preload cost
+  - disabled body-font preload
+  - added `priority` to above-the-fold intro images on `/menu`, `/about`, and `/contact`
+  - split page transitions so mobile avoids the Framer Motion path
+  - disabled the home grass-scene image on mobile
+- The remaining Lighthouse headroom is mainly in shared JavaScript and the remaining display-font preload, which is why the perfect-score challenge is still open.
 
 ---
 
@@ -48,7 +65,7 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Expert Challenges
 
-- [ ] Add a reservation system using localStorage (Missing)
+- [x] Add a reservation system using localStorage - `/contact` now supports a dual-mode reservation/enquiry flow with local persistence, reservation validation, saved-reservation management, and email handoff
 - [ ] Implement a shopping cart / order system (Missing)
 - [x] Add Framer Motion or similar for page transitions
 - [ ] Create a theme switcher with multiple color schemes (Missing)
@@ -59,10 +76,9 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 ## Remaining Work By Difficulty
 
 1. Add a multi-theme switcher with multiple color schemes.
-2. Add a `localStorage`-backed reservation system.
-3. Add internationalization.
-4. Add a shopping cart / ordering flow.
-5. Chase a perfect Lighthouse score.
+2. Add internationalization.
+3. Add a shopping cart / ordering flow.
+4. Chase a perfect Lighthouse score.
 
 ---
 

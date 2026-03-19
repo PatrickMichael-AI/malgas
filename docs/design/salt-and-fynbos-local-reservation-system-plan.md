@@ -60,41 +60,41 @@
 
 ### Phase 1: Reservation Contract and Storage
 
-- [ ] Define `ReservationServiceWindow` options and weekday rules
-- [ ] Define `ReservationRecord` and versioned storage key
-- [ ] Add safe storage helpers for load, save, remove, and sort
-- [ ] Define the `mailto:` builder for saved reservation details
+- [x] Define `ReservationServiceWindow` options and weekday rules
+- [x] Define `ReservationRecord` and versioned storage key
+- [x] Add safe storage helpers for load, save, remove, and sort
+- [x] Define the `mailto:` builder for saved reservation details
 
 ### Phase 2: Dual-Mode Contact Shell
 
-- [ ] Convert the current form shell into a shared `Reservation` / `General enquiry` mode switcher
-- [ ] Preserve the existing visual language and surrounding contact-page layout
-- [ ] Split validation and submit handling by mode without duplicating the entire shell UI
+- [x] Convert the current form shell into a shared `Reservation` / `General enquiry` mode switcher
+- [x] Preserve the existing visual language and surrounding contact-page layout
+- [x] Split validation and submit handling by mode without duplicating the entire shell UI
 
 ### Phase 3: Reservation Flow
 
-- [ ] Add structured reservation inputs and inline validation
-- [ ] Save successful reservations to `localStorage`
-- [ ] Show post-save confirmation with reservation summary and email CTA
-- [ ] Render the saved-reservations list with remove action
-- [ ] Sync the list across tabs via the `storage` event
+- [x] Add structured reservation inputs and inline validation
+- [x] Save successful reservations to `localStorage`
+- [x] Show post-save confirmation with reservation summary and email CTA
+- [x] Render the saved-reservations list with remove action
+- [x] Sync the list across tabs via the `storage` event
 
 ### Phase 4: General Enquiry Preservation
 
-- [ ] Keep enquiry mode as a message-first flow with drafted email output
-- [ ] Ensure switching modes does not corrupt the other mode's validation or success state
-- [ ] Update contact-page copy so the dual-purpose behavior is explicit
+- [x] Keep enquiry mode as a message-first flow with drafted email output
+- [x] Ensure switching modes does not corrupt the other mode's validation or success state
+- [x] Update contact-page copy so the dual-purpose behavior is explicit
 
 ### Phase 5: Verification and Challenge Update
 
-- [ ] Verify reservation save, refresh persistence, and remove behavior
-- [ ] Verify closed-day and invalid service-window validation
-- [ ] Verify enquiry mode still drafts the correct email
-- [ ] Verify no hydration errors or client/server mismatch around stored reservations
-- [ ] Run `npm run lint`
-- [ ] Run `npm run build`
-- [ ] Update `CHALLENGES.md` to mark the localStorage reservation challenge complete
-- [ ] Mark the phase checklist items complete in this plan as work lands
+- [x] Verify reservation save, refresh persistence, and remove behavior
+- [x] Verify closed-day and invalid service-window validation
+- [x] Verify enquiry mode still drafts the correct email
+- [x] Verify no hydration errors or client/server mismatch around stored reservations
+- [x] Run `npm run lint`
+- [x] Run `npm run build`
+- [x] Update `CHALLENGES.md` to mark the localStorage reservation challenge complete
+- [x] Mark the phase checklist items complete in this plan as work lands
 
 ## Test Plan
 
