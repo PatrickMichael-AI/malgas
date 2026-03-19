@@ -399,7 +399,14 @@ export function MenuExplorer() {
                       </div>
 
                       <div className="flex items-center justify-between gap-3">
-                        <span className="rounded-full border border-border/60 bg-background/80 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-foreground/78">
+                        <span
+                          className={cn(
+                            "menu-chapter-status-chip rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em]",
+                            isChapterSelected
+                              ? "menu-chapter-status-chip-active border-fynbos/35 bg-fynbos/10 text-fynbos"
+                              : "menu-chapter-status-chip-muted border-border/60 bg-background/80 text-foreground/78"
+                          )}
+                        >
                           {isChapterSelected ? "In results" : "Hidden"}
                         </span>
                         {!isMuted ? (
