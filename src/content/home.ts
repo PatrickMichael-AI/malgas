@@ -72,15 +72,15 @@ export const homeHero = {
   ] satisfies readonly HomeHeroDetail[],
   images: {
     primary: {
-      src: "/images/home-hero-dining-room.jpg",
+      src: "/images/home-hero-dining-room.webp",
       alt: "Sun-washed Salt & Fynbos dining room in Malgas",
     },
     secondary: {
-      src: "/images/home-hero-dessert.jpg",
+      src: "/images/home-hero-dessert.webp",
       alt: "Country-kitchen dessert served at Salt & Fynbos",
     },
     tertiary: {
-      src: "/images/home-hero-drink.jpg",
+      src: "/images/home-hero-drink.webp",
       alt: "Golden drink on a long lunch table at Salt & Fynbos",
     },
     spotlight: {
@@ -178,11 +178,11 @@ export const homeStoryChapter = {
   } satisfies HomeCta,
   images: {
     primary: {
-      src: "/images/home-story-portrait.jpg",
+      src: "/images/home-story-portrait.webp",
       alt: "Owner or host portrait inside Salt & Fynbos",
     },
     secondary: {
-      src: "/images/home-story-table-detail.jpg",
+      src: "/images/home-story-table-detail.webp",
       alt: "Shared table detail during service at Salt & Fynbos",
     },
   } satisfies Record<"primary" | "secondary", HomeImage>,

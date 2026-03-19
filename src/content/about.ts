@@ -46,11 +46,11 @@ export const aboutIntro = {
   ] satisfies readonly AboutAction[],
   images: {
     primary: {
-      src: "/images/about-intro-room.jpg",
+      src: "/images/about-intro-room.webp",
       alt: "Bright interior of Salt & Fynbos in Malgas",
     },
     secondary: {
-      src: "/images/about-intro-portrait.jpg",
+      src: "/images/about-intro-portrait.webp",
       alt: "Portrait detail of the Salt & Fynbos founder or host",
     },
   },
@@ -105,37 +105,37 @@ export const aboutGallery = {
     "These images hold the details that define Salt & Fynbos: estuary light, tactile ceramics, produce-led plates, local pours, and the slower hospitality cues that make the house feel lived in.",
   items: [
     {
-      src: "/images/about-intro-room.jpg",
+      src: "/images/about-intro-room.webp",
       alt: "Sun-washed dining room at Salt & Fynbos",
       title: "Sun-washed room",
       caption: "The dining room stays bright, calm, and open to the estuary light.",
     },
     {
-      src: "/images/about-intro-portrait.jpg",
+      src: "/images/about-intro-portrait.webp",
       alt: "Host portrait detail inside Salt & Fynbos",
       title: "House host",
       caption: "The story stays personal, grounded, and close to the room.",
     },
     {
-      src: "/images/about-pantry-plate.jpg",
+      src: "/images/about-pantry-plate.webp",
       alt: "Produce-led pantry plate at Salt & Fynbos",
       title: "Pantry plate",
       caption: "Produce, herbs, and ceramics carry the pantry-led identity at close range.",
     },
     {
-      src: "/images/about-pantry-pour.jpg",
+      src: "/images/about-pantry-pour.webp",
       alt: "Wine being poured during a long lunch at Salt & Fynbos",
       title: "Mid-pour",
       caption: "Local pours and slower lunches are part of the house rhythm.",
     },
     {
-      src: "/images/home-story-table-detail.jpg",
+      src: "/images/home-story-table-detail.webp",
       alt: "Shared table detail with passed dishes at Salt & Fynbos",
       title: "Table detail",
       caption: "Shared plates, linen textures, and passed dishes keep the table communal.",
     },
     {
-      src: "/images/contact-form-anchor.jpg",
+      src: "/images/contact-form-anchor.webp",
       alt: "Welcoming arrival moment at Salt & Fynbos",
       title: "Arrival mood",
       caption: "The welcome should feel settled before the first plate reaches the table.",
@@ -151,11 +151,11 @@ export const aboutPantryBand = {
   tone: "sun",
   images: {
     primary: {
-      src: "/images/about-pantry-plate.jpg",
+      src: "/images/about-pantry-plate.webp",
       alt: "Produce-led plate at Salt & Fynbos",
     },
     secondary: {
-      src: "/images/about-pantry-pour.jpg",
+      src: "/images/about-pantry-pour.webp",
       alt: "Wine or drink poured during a long lunch at Salt & Fynbos",
     },
   },

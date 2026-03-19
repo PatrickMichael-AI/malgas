@@ -39,22 +39,22 @@
     - `title`: `A closer look at the room, the pantry, and the long-table rhythm.`
     - `body`: `These images hold the details that define Salt & Fynbos: estuary light, tactile ceramics, produce-led plates, local pours, and the slower hospitality cues that make the house feel lived in.`
   - Exact gallery items:
-    - `about-intro-room.jpg`
+    - `about-intro-room.webp`
       - title: `Sun-washed room`
       - caption: `The dining room stays bright, calm, and open to the estuary light.`
-    - `about-intro-portrait.jpg`
+    - `about-intro-portrait.webp`
       - title: `House host`
       - caption: `The story stays personal, grounded, and close to the room.`
-    - `about-pantry-plate.jpg`
+    - `about-pantry-plate.webp`
       - title: `Pantry plate`
       - caption: `Produce, herbs, and ceramics carry the pantry-led identity at close range.`
-    - `about-pantry-pour.jpg`
+    - `about-pantry-pour.webp`
       - title: `Mid-pour`
       - caption: `Local pours and slower lunches are part of the house rhythm.`
-    - `home-story-table-detail.jpg`
+    - `home-story-table-detail.webp`
       - title: `Table detail`
       - caption: `Shared plates, linen textures, and passed dishes keep the table communal.`
-    - `contact-form-anchor.jpg`
+    - `contact-form-anchor.webp`
       - title: `Arrival mood`
       - caption: `The welcome should feel settled before the first plate reaches the table.`
 - Integrate the gallery into `src/app/about/page.tsx`.

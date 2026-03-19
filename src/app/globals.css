@@ -204,7 +204,7 @@ html[data-theme="dark"] ::selection {
 
   .home-hero-scene-plate {
     z-index: 1;
-    background-image: url("/images/home-estuary-grass-light-plate.jpg");
+    background-image: url("/images/home-estuary-grass-light-plate.webp");
     background-position: center 100%;
     background-repeat: no-repeat;
     background-size: 172% auto;
