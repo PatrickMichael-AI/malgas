@@ -12,11 +12,50 @@ export type ContactCard = {
   title: string
 }
 
+export type ReservationWeekday =
+  | "monday"
+  | "tuesday"
+  | "wednesday"
+  | "thursday"
+  | "friday"
+  | "saturday"
+  | "sunday"
+
+export type ReservationServiceWindow = "late-lunch" | "sunset-supper" | "slow-coastal-lunch"
+
+export type ReservationServiceWindowConfig = {
+  allowedWeekdays: readonly ReservationWeekday[]
+  id: ReservationServiceWindow
+  label: string
+  timeLabel: string
+}
+
+export const reservationServiceWindows = [
+  {
+    id: "late-lunch",
+    label: "Late lunch",
+    timeLabel: "12:00 - late lunch",
+    allowedWeekdays: ["thursday", "friday"],
+  },
+  {
+    id: "sunset-supper",
+    label: "Sunset supper",
+    timeLabel: "12:00 - sunset supper",
+    allowedWeekdays: ["saturday"],
+  },
+  {
+    id: "slow-coastal-lunch",
+    label: "Slow coastal lunch",
+    timeLabel: "12:00 - slow coastal lunch",
+    allowedWeekdays: ["sunday"],
+  },
+] satisfies readonly ReservationServiceWindowConfig[]
+
 export const contactHero = {
   eyebrow: "Contact",
-  title: "Start with the enquiry and we will shape the right table around it.",
+  title: "Choose the right contact path, then we will shape the table or the reply around it.",
   body:
-    "Bookings stay email-first so the team can reply with the right pace, menu direction, and timing. Share the essentials in the form, then use email or phone if the booking needs quicker coordination.",
+    "Use reservation mode to save a table request on this device before emailing it through, or use general enquiry for private dining questions, produce-led menu notes, and plans that still need shaping. The restaurant still replies email-first so timing, menu direction, and hosting details can be handled properly.",
   actions: [
     {
       href: `mailto:${siteConfig.email}`,
@@ -64,28 +103,28 @@ export const contactHero = {
 } as const
 
 export const contactPlanningSection = {
-  eyebrow: "What to send",
-  title: "A few specifics help the team answer properly the first time.",
+  eyebrow: "Two ways in",
+  title: "Reservations and message-first enquiries now start in the same place.",
   body:
-    "Preferred date, guest count, and the kind of table you are planning make the booking easier to pace. That is especially useful for private lunches, celebrations, and longer South Coast gatherings.",
+    "Save a reservation when the date and table rhythm are clear, or send a general enquiry when you need guidance before locking anything in. Either way, a little context helps the team answer properly the first time.",
   reasons: [
-    "Reserve a standard lunch or supper table.",
-    "Ask about a private gathering or celebration.",
-    "Check seasonal menu or produce-led changes.",
-    "Coordinate a group visit to Malgas.",
+    "Save a lunch or supper reservation on this device before emailing it through.",
+    "Ask about a private gathering or celebration before fixing the table details.",
+    "Check seasonal menu or produce-led changes through a general enquiry.",
+    "Coordinate a group visit to Malgas with either a saved reservation or a message-first enquiry.",
   ],
   notes: [
     {
-      title: "Best for",
-      body: "Weekend lunches, sunset suppers, and slower long-table bookings.",
+      title: "Reservation mode",
+      body: "Best when the date, service window, and guest count are already clear enough to save locally.",
     },
     {
-      title: "Lead time",
-      body: "Give us extra notice for groups, shared menus, or private dining requests.",
+      title: "General enquiry",
+      body: "Best when you need guidance on private dining, produce-led pacing, or a plan that is still taking shape.",
     },
     {
-      title: "What helps",
-      body: "Preferred date, guest count, and anything the kitchen should know early.",
+      title: "What still helps",
+      body: "Preferred timing, guest count, and anything the kitchen or front of house should know early.",
     },
   ],
   channels: contactChannels,
@@ -93,9 +132,9 @@ export const contactPlanningSection = {
 
 export const contactCta = {
   eyebrow: "Before you send",
-  title: "If the table already feels right, pair the enquiry with a quick look at the menu or the house story.",
+  title: "If the table or the enquiry already feels right, pair it with a quick look at the menu or the house story.",
   body:
-    "That gives the team better context for private tables, slower lunches, and guests who want the full Salt & Fynbos rhythm rather than a quick stop.",
+    "That gives the team better context for saved reservations, private tables, slower lunches, and guests who want the full Salt & Fynbos rhythm rather than a quick stop.",
   actions: [
     { href: "/menu", label: "Browse the menu", variant: "sun" },
     { href: "/about", label: "Read the story", variant: "secondary" },
