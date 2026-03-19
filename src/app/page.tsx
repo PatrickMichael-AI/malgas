@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { ArrowRight, Clock3, MapPin, Wine, type LucideIcon } from "lucide-react"
+import { ArrowRight, Clock3, MapPin, Star, Wine, type LucideIcon } from "lucide-react"
 
 import { CtaLink } from "@/components/cta-link"
 import {
@@ -285,8 +285,24 @@ export default function HomePage() {
                 index === 1 ? "bg-apricot/68" : index === 2 ? "bg-ink text-background" : "bg-card"
               }`}
             >
+              <div
+                aria-label={`${testimonial.rating} out of 5 stars`}
+                className="flex items-center gap-1.5"
+              >
+                {Array.from({ length: 5 }, (_, starIndex) => (
+                  <Star
+                    key={`${testimonial.name}-star-${starIndex + 1}`}
+                    className={`h-4 w-4 ${
+                      index === 2 ? "text-sun" : "text-apricot"
+                    }`}
+                    fill={starIndex < testimonial.rating ? "currentColor" : "none"}
+                    strokeWidth={1.8}
+                  />
+                ))}
+                <span className="sr-only">{testimonial.rating} out of 5 stars</span>
+              </div>
               <p
-                className={`font-display text-3xl leading-tight ${
+                className={`mt-5 font-display text-3xl leading-tight ${
                   index === 2 ? "text-background" : "text-ink"
                 }`}
               >

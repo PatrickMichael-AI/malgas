@@ -121,6 +121,7 @@ export default function MenuPage() {
         eyebrow={menuSequence.eyebrow}
         title={menuSequence.title}
         body={menuSequence.body}
+        fullWidthChildren
         className="motion-delay-1 lg:py-12"
       >
         <div className="grid gap-4 lg:grid-cols-4">

@@ -37,6 +37,7 @@ export type Testimonial = {
   quote: string
   name: string
   context: string
+  rating: 4 | 5
 }
 
 export const homeHero = {
@@ -193,18 +194,21 @@ export const testimonials = [
       "It feels like a lunch by the estuary that somehow turned into the best dinner of the week.",
     name: "Lara M.",
     context: "Weekend regular",
+    rating: 5,
   },
   {
     quote:
       "The room is calm, the plates are generous, and the wine list makes you want to stay for sunset.",
     name: "Jaco P.",
     context: "Autumn harvest supper",
+    rating: 5,
   },
   {
     quote:
       "Exactly the kind of coastal-country restaurant you hope to discover and immediately want to return to.",
     name: "Danielle R.",
     context: "First-time guest from Cape Town",
+    rating: 5,
   },
 ] as const satisfies readonly Testimonial[]
 
