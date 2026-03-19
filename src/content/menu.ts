@@ -6,9 +6,21 @@ export type MenuAction = {
 
 export type MenuChapterTone = "paper" | "sea" | "sun" | "apricot"
 
+export type MenuDietaryTag =
+  | "vegetarian"
+  | "vegan"
+  | "gluten-free"
+  | "dairy-free"
+  | "seafood"
+  | "meat"
+
+export type MenuPriceBand = "under-100" | "100-180" | "over-180"
+
 export type MenuItem = {
   description: string
+  dietary: readonly MenuDietaryTag[]
   name: string
+  price: number
 }
 
 export type MenuChapter = {
@@ -58,6 +70,33 @@ export const menuSequence = {
     "The page follows the same rhythm we want at the table: a clear beginning, a confident center, vegetables that still matter, and dessert that earns the extra coffee.",
 } as const
 
+export const menuDietaryTagOrder = [
+  "vegetarian",
+  "vegan",
+  "gluten-free",
+  "dairy-free",
+  "seafood",
+  "meat",
+] as const satisfies readonly MenuDietaryTag[]
+
+export const menuDietaryTagLabels: Record<MenuDietaryTag, string> = {
+  vegetarian: "Vegetarian",
+  vegan: "Vegan",
+  "gluten-free": "Gluten-free",
+  "dairy-free": "Dairy-free",
+  seafood: "Seafood",
+  meat: "Meat",
+}
+
+export const menuPriceBands: ReadonlyArray<{
+  id: MenuPriceBand
+  label: string
+}> = [
+  { id: "under-100", label: "Under R100" },
+  { id: "100-180", label: "R100-R180" },
+  { id: "over-180", label: "Over R180" },
+]
+
 export const menuChapters = [
   {
     chapter: "Start",
@@ -74,10 +113,14 @@ export const menuChapters = [
       {
         name: "Charred courgettes with whipped chevin",
         description: "Mint, lemon oil, toasted seeds, and warm farm bread.",
+        price: 118,
+        dietary: ["vegetarian"],
       },
       {
         name: "Smoked snoek croquettes",
         description: "Served with herb mayo and pickled cucumber.",
+        price: 132,
+        dietary: ["seafood"],
       },
     ],
   },
@@ -96,10 +139,14 @@ export const menuChapters = [
       {
         name: "Roasted line fish with sea herb butter",
         description: "Served with crushed potatoes and warm greens.",
+        price: 218,
+        dietary: ["seafood", "gluten-free"],
       },
       {
         name: "Braised lamb shoulder for two",
         description: "Soft polenta, pan juices, and market vegetables.",
+        price: 295,
+        dietary: ["meat", "gluten-free"],
       },
     ],
   },
@@ -118,10 +165,14 @@ export const menuChapters = [
       {
         name: "Butter beans with roasted garlic",
         description: "Olive oil, lemon, and crispy pangrattato.",
+        price: 96,
+        dietary: ["vegetarian", "dairy-free"],
       },
       {
         name: "Baby leaves with orchard vinaigrette",
         description: "Soft herbs, radish, and shaved pecorino.",
+        price: 88,
+        dietary: ["vegetarian", "gluten-free"],
       },
     ],
   },
@@ -140,10 +191,14 @@ export const menuChapters = [
       {
         name: "Pear and almond tart",
         description: "Served warm with cultured cream.",
+        price: 92,
+        dietary: ["vegetarian"],
       },
       {
         name: "Buttermilk pudding with naartjie syrup",
         description: "Soft, bright, and gently citrus-led.",
+        price: 86,
+        dietary: ["vegetarian", "gluten-free"],
       },
     ],
   },

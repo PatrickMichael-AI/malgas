@@ -4,9 +4,9 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Audit Snapshot
 
-- Met: 25
+- Met: 26
 - Partial / Unverified: 1
-- To do: 8
+- To do: 7
 - Verification used for this audit: local `npm run lint` and `npm run build` both passed
 
 ---
@@ -37,7 +37,7 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 ## Advanced Challenges
 
 - [x] Extract the hardcoded menu data into a separate data file and render with `.map()`
-- [ ] Add menu filtering/search (by category, price range, dietary info) (Missing)
+- [x] Add menu filtering/search (by category, price range, dietary info)
 - [x] Implement dark mode with a toggle
 - [x] Add form validation to the contact/reservation form
 - [x] Add Open Graph meta tags for social media sharing
@@ -58,14 +58,13 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Remaining Work By Difficulty
 
-1. Add menu filtering/search, including the missing price and dietary metadata needed to support it.
-2. Add a multi-theme switcher with multiple color schemes.
-3. Add a `localStorage`-backed reservation system.
-4. Add internationalization.
-5. Verify deployment on Vercel/Netlify and custom-domain setup.
-6. Run Lighthouse and fix accessibility and performance issues.
-7. Add a shopping cart / ordering flow.
-8. Chase a perfect Lighthouse score.
+1. Add a multi-theme switcher with multiple color schemes.
+2. Add a `localStorage`-backed reservation system.
+3. Add internationalization.
+4. Verify deployment on Vercel/Netlify and custom-domain setup.
+5. Run Lighthouse and fix accessibility and performance issues.
+6. Add a shopping cart / ordering flow.
+7. Chase a perfect Lighthouse score.
 
 ---
 
