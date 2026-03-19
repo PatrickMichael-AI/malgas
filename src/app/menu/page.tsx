@@ -52,6 +52,7 @@ export default function MenuPage() {
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 20rem, 64vw"
+                  priority
                 />
               </div>
             </div>

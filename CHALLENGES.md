@@ -4,9 +4,9 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Audit Snapshot
 
-- Met: 27
+- Met: 28
 - Partial / Unverified: 0
-- To do: 6
+- To do: 5
 - Verification used for this audit: local `npm run lint` and `npm run build` both passed
 
 ---
@@ -43,7 +43,7 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 - [x] Add Open Graph meta tags for social media sharing
 - [x] Implement lazy loading for images
 - [x] Add animations and micro-interactions (subtle, tasteful ones)
-- [ ] Run a Lighthouse audit and fix all accessibility issues (Missing)
+- [x] Run a Lighthouse audit and fix all accessibility issues - mobile audits completed for `/`, `/menu`, `/about`, and `/contact`; accessibility, best practices, and SEO now score `100` across the audited routes
 - [x] Make the navigation highlight the active page
 
 ## Expert Challenges
@@ -61,9 +61,8 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 1. Add a multi-theme switcher with multiple color schemes.
 2. Add a `localStorage`-backed reservation system.
 3. Add internationalization.
-4. Run Lighthouse and fix accessibility and performance issues.
-5. Add a shopping cart / ordering flow.
-6. Chase a perfect Lighthouse score.
+4. Add a shopping cart / ordering flow.
+5. Chase a perfect Lighthouse score.
 
 ---
 
