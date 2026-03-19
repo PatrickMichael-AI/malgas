@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import localFont from "next/font/local"
+import Script from "next/script"
 
 import { BackToTopButton } from "@/components/back-to-top-button"
 import { PageTransitionShell } from "@/components/page-transition-shell"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { siteConfig } from "@/content/site"
+import { themeInitScript } from "@/lib/theme"
 
 import "./globals.css"
 
@@ -66,6 +68,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${display.variable} ${bodyFont.variable} bg-background text-foreground antialiased`}>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
         <div className="page-frame flex min-h-screen flex-col">
           <SiteHeader />
           <main className="relative z-10 flex-1">

@@ -26,7 +26,7 @@ export function SiteFooter() {
             </div>
 
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <CtaLink href="/contact" variant="sun" className="text-ink">
+              <CtaLink href="/contact" variant="sun" className="footer-primary-cta !text-[#172126]">
                 Plan your visit
               </CtaLink>
               <CtaLink

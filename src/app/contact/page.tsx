@@ -161,7 +161,7 @@ export default function ContactPage() {
               {contactPlanningSection.reasons.map((reason) => (
                 <div
                   key={reason}
-                  className="rounded-[1.5rem] border border-border/60 bg-background/85 px-4 py-4"
+                  className="contact-reason-card rounded-[1.5rem] border border-border/60 bg-background/85 px-4 py-4"
                 >
                   <p className="text-sm leading-7 text-foreground/86">{reason}</p>
                 </div>
@@ -171,7 +171,10 @@ export default function ContactPage() {
 
           <div className="grid gap-4 md:grid-cols-3 lg:gap-5">
             {contactPlanningSection.notes.map((note) => (
-              <article key={note.title} className="postcard-panel rounded-[2rem] bg-background/92 px-5 py-5">
+              <article
+                key={note.title}
+                className="contact-note-card postcard-panel rounded-[2rem] bg-background/92 px-5 py-5"
+              >
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/72">
                   {note.title}
                 </p>
@@ -191,7 +194,12 @@ export default function ContactPage() {
         actions={
           <>
             {contactCta.actions.map((action) => (
-              <CtaLink key={action.href} href={action.href} variant={action.variant}>
+              <CtaLink
+                key={action.href}
+                href={action.href}
+                variant={action.variant}
+                className={action.variant === "sun" ? "!text-[#172126]" : undefined}
+              >
                 {action.label}
               </CtaLink>
             ))}

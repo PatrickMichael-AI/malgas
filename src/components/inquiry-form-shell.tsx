@@ -101,11 +101,11 @@ export function InquiryFormShell() {
     <form
       noValidate
       onSubmit={handleSubmit}
-      className="motion-enter motion-delay-1 relative overflow-hidden rounded-[2.7rem] border border-border/80 bg-card px-5 py-6 shadow-float sm:px-6 lg:px-7"
+      className="inquiry-shell motion-enter motion-delay-1 relative overflow-hidden rounded-[2.7rem] border border-border/80 bg-card px-5 py-6 shadow-float sm:px-6 lg:px-7"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,191,112,0.24),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(149,198,203,0.2),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.42),transparent_48%)]" />
-      <div className="story-orb right-[-2rem] top-[-2rem] h-28 w-28 bg-sun/30" />
-      <div className="story-orb bottom-[-2rem] left-[-1rem] h-24 w-24 bg-sea/18" />
+      <div className="inquiry-overlay pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,191,112,0.24),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(149,198,203,0.2),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.42),transparent_48%)]" />
+      <div className="inquiry-orb-primary story-orb right-[-2rem] top-[-2rem] h-28 w-28 bg-sun/30" />
+      <div className="inquiry-orb-secondary story-orb bottom-[-2rem] left-[-1rem] h-24 w-24 bg-sea/18" />
 
       <div className="relative">
         <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-start">
@@ -122,7 +122,7 @@ export function InquiryFormShell() {
             </div>
           </div>
 
-          <div className="rounded-[1.8rem] border border-border/70 bg-background/92 px-4 py-4 shadow-paper lg:max-w-[16rem]">
+          <div className="inquiry-side-note rounded-[1.8rem] border border-border/70 bg-background/92 px-4 py-4 shadow-paper lg:max-w-[16rem]">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-foreground/70">
               Email-first booking
             </p>
@@ -159,15 +159,15 @@ export function InquiryFormShell() {
           )}
         </div>
 
-        <div className="mt-6 rounded-[2rem] border border-border/70 bg-background/88 p-3 sm:p-4">
+        <div className="inquiry-fields-shell mt-6 rounded-[2rem] border border-border/70 bg-background/88 p-3 sm:p-4">
           <div className="mb-4 flex flex-wrap gap-3">
-            <span className="rounded-full border border-border/70 bg-foam px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/80 shadow-paper">
+            <span className="inquiry-meta-chip rounded-full border border-border/70 bg-foam px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/80 shadow-paper">
               Preferred date
             </span>
-            <span className="rounded-full border border-border/70 bg-foam px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/80 shadow-paper">
+            <span className="inquiry-meta-chip rounded-full border border-border/70 bg-foam px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/80 shadow-paper">
               Guest count
             </span>
-            <span className="rounded-full border border-border/70 bg-foam px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/80 shadow-paper">
+            <span className="inquiry-meta-chip rounded-full border border-border/70 bg-foam px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/80 shadow-paper">
               Reply email
             </span>
           </div>
@@ -290,7 +290,7 @@ export function InquiryFormShell() {
           </label>
         </div>
 
-        <div className="mt-5 rounded-[1.9rem] border border-border/70 bg-card px-4 py-4 shadow-paper">
+        <div className="inquiry-summary mt-5 rounded-[1.9rem] border border-border/70 bg-card px-4 py-4 shadow-paper">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground/70">
@@ -307,7 +307,7 @@ export function InquiryFormShell() {
         </div>
 
         {isSubmitted ? (
-          <div className="mt-6 grid gap-3 rounded-[1.9rem] border border-border/70 bg-background/96 p-4 shadow-paper sm:grid-cols-[1fr_auto_auto] sm:items-center">
+          <div className="inquiry-ready mt-6 grid gap-3 rounded-[1.9rem] border border-border/70 bg-background/96 p-4 shadow-paper sm:grid-cols-[1fr_auto_auto] sm:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground/70">
                 Enquiry ready
