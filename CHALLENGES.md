@@ -4,9 +4,9 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 
 ## Audit Snapshot
 
-- Met: 26
-- Partial / Unverified: 1
-- To do: 7
+- Met: 27
+- Partial / Unverified: 0
+- To do: 6
 - Verification used for this audit: local `npm run lint` and `npm run build` both passed
 
 ---
@@ -54,17 +54,16 @@ This checklist predates the current Salt & Fynbos redesign. The repo is no longe
 - [ ] Create a theme switcher with multiple color schemes (Missing)
 - [ ] Add internationalization (multi-language support) (Missing)
 - [ ] Achieve a perfect Lighthouse score (100/100/100/100) (Missing)
-- [ ] Deploy to Vercel/Netlify with a custom domain (Unverified: site URL is configured, but deployment is not proven in-repo)
+- [x] Deploy to Vercel/Netlify with a custom domain
 
 ## Remaining Work By Difficulty
 
 1. Add a multi-theme switcher with multiple color schemes.
 2. Add a `localStorage`-backed reservation system.
 3. Add internationalization.
-4. Verify deployment on Vercel/Netlify and custom-domain setup.
-5. Run Lighthouse and fix accessibility and performance issues.
-6. Add a shopping cart / ordering flow.
-7. Chase a perfect Lighthouse score.
+4. Run Lighthouse and fix accessibility and performance issues.
+5. Add a shopping cart / ordering flow.
+6. Chase a perfect Lighthouse score.
 
 ---
 

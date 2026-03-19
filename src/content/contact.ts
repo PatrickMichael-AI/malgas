@@ -47,11 +47,11 @@ export const contactHero = {
   ] satisfies readonly ContactCard[],
   images: {
     primary: {
-      src: "/images/contact-form-anchor.jpg",
+      src: "/images/contact-form-anchor.webp",
       alt: "Welcoming arrival moment at Salt & Fynbos",
     },
     secondary: {
-      src: "/images/home-hero-drink.jpg",
+      src: "/images/home-hero-drink.webp",
       alt: "Drink detail from a long lunch table at Salt & Fynbos",
     },
   },

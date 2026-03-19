@@ -48,11 +48,11 @@ export const menuIntro = {
   ] satisfies readonly MenuAction[],
   images: {
     primary: {
-      src: "/images/menu-intro-sweets.jpg",
+      src: "/images/menu-intro-sweets.webp",
       alt: "Bakery and pantry sweets at Salt & Fynbos",
     },
     secondary: {
-      src: "/images/menu-intro-main-detail.jpg",
+      src: "/images/menu-intro-main-detail.webp",
       alt: "Coastal lunch detail at Salt & Fynbos",
     },
   },
