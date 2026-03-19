@@ -4,6 +4,7 @@ import localFont from "next/font/local"
 import Script from "next/script"
 
 import { BackToTopButton } from "@/components/back-to-top-button"
+import { LayoutSceneHost } from "@/components/layout-scene-host"
 import { PageTransitionShell } from "@/components/page-transition-shell"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -72,6 +73,7 @@ export default function RootLayout({
           {themeInitScript}
         </Script>
         <div className="page-frame flex min-h-screen flex-col">
+          <LayoutSceneHost />
           <SiteHeader />
           <main className="relative z-10 flex-1">
             <div className="mx-auto w-full max-w-[90rem] px-4 pb-10 pt-8 sm:px-6 sm:pb-12 lg:px-8 lg:pb-14 lg:pt-14">

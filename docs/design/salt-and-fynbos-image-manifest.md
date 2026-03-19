@@ -67,6 +67,70 @@ Append this to every Nano Banana prompt:
 - Replace current `burger` usage with `home-story-table-detail.jpg` and `menu-intro-main-detail.jpg`
 - Replace current `sushi-plate` usage with `about-pantry-plate.jpg`
 
+## Home Scene Prompt Set
+
+### Use
+
+- Full-bleed home-page scene artwork behind the header and hero
+- Estuary-edge atmospheric background plate, not a literal scenic hero image
+- Source direction for later static and animated botanical scene work
+
+### Visual Requirements
+
+- Estuary or coastal marsh mood, not generic meadow grass
+- Grass or reeds must grow from a dense grounded base near the bottom edge
+- Stems should rise mostly vertically, then lean gently in one wind direction
+- Strongest density belongs at the lower left and lower right edges
+- The middle of the frame must stay open for headline text and image overlays
+- The artwork should read as atmosphere, not as line texture or cross-hatching
+- No chunky leaves, no tropical plants, no flower heads, no decorative sketch style
+
+### Reference Requirements
+
+- Best reference:
+  - estuary reeds, marsh grass, or coastal grass in wind
+  - visible rooted base mass near the ground
+  - stems thinning upward into wisps
+  - simple silhouette or low-detail tonal treatment
+- Useful pair:
+  - one reference that feels correct
+  - one reference that feels wrong
+- Avoid references that are:
+  - pencil sketch or cross-hatching based
+  - tropical foliage
+  - botanical illustration with isolated floating stems
+  - overly photographic sunset landscapes
+
+### SVG Translation Note
+
+- Treat generated estuary-grass images as art-direction reference plates, not direct SVG conversion assets.
+- Use them to guide density, rooted base shape, center openness, taper, and wind direction.
+- Do not trace them literally for animation; the final animated SVG should be a simplified interpretation with a limited number of grouped stems and soft atmospheric layers.
+
+### Core Nano Banana Prompt
+
+`Wide editorial background plate for a premium coastal restaurant website hero. Estuary edge at low wind, viewed as an abstract atmospheric scene rather than a literal landscape. Dense beds of long coastal reeds and estuary grass rise naturally from the lower left and lower right edges, rooted in a soft ground mass, with stems tapering thinner as they rise and bending gently in one wind direction. The center remains open and quiet for headline text. Very subtle layered depth, elegant negative space, calm premium mood, soft organic rhythm, not busy. Style: monochrome tonal artwork, flat single-color botanical silhouette language, translucent paper-like layering, refined editorial composition, minimal detail, soft atmospheric fade, luxury hospitality branding, high-end website background. Color direction: warm pale sand / faded sage / misty estuary wash, almost duotone, no harsh contrast. Composition: full-bleed panoramic background, strongest density at the lower outer corners, stems thinning upward, no hard horizon line, no focal object, no people, no buildings, no boats, no flowers, no chunky leaves, no tropical plants. Important: the reeds must clearly grow out of a grounded base, not float as random lines. The base should feel rooted and denser near the bottom, then dissolve upward into finer wisps. Keep the middle 40 percent of the frame visually open for text and image overlays. Output: clean high-resolution horizontal background plate for a homepage hero, sophisticated, understated, atmospheric.`
+
+### Negative Prompt
+
+`cross-hatching, pencil sketch, random strokes, palm leaves, tropical foliage, thick fynbos blobs, busy illustration, detailed landscape, sunset photo realism, hard outlines, cluttered center, flowers, literal scenic postcard`
+
+### Light Mode Variant
+
+`Wide editorial background plate for a premium coastal restaurant website hero in light mode. Estuary reeds and coastal grass rise from a grounded pale sand base at the lower left and lower right edges, with soft tapering stems bending gently in one wind direction. The center remains calm and open for typography. Style: monochrome tonal artwork, flat silhouette language, translucent paper-like layers, refined hospitality editorial mood. Color direction: warm pale sand, faded sage, misted estuary blue, soft cream haze, very low contrast, sun-washed and airy. Important: dense rooted base, finer wisps upward, no random line texture, no chunky leaves, no literal landscape.`
+
+### Dark Mode Variant
+
+`Wide editorial background plate for a premium coastal restaurant website hero in dark mode. Estuary reeds and marsh grass emerge from a grounded low-contrast base at the lower edges, rising upward in thin tapering stems with a calm wind lean. The center stays quiet for text and image overlays. Style: monochrome tonal artwork, flat silhouette reeds, restrained atmospheric layering, premium coastal hospitality mood. Color direction: deep estuary ink, muted sage, low amber mist, dark coastal air, soft glow but no neon contrast. Important: the reeds must feel rooted and natural, not sketched or cross-hatched, and the middle field must remain visually open.`
+
+### Graphic Silhouette Variant
+
+`Create a panoramic full-bleed hero background using elegant estuary grass silhouettes for a luxury coastal restaurant website. Use denser rooted reed beds at the lower corners, mostly vertical stems with gentle wind bend, clean negative space through the center, and a flat monochrome editorial silhouette style. Keep forms simple, readable, and intentional, with strong grounded bases and thinner tapering stems upward. No realism, no visible line-art sketch texture, no flowers, no tropical leaves, no postcard scene.`
+
+### Misty Atmospheric Wash Variant
+
+`Create a panoramic estuary-edge atmospheric background for a premium hospitality homepage. Suggest dense coastal reeds emerging from soft grounded bases at the lower edges, but render them through misty tonal wash and translucent silhouette layers rather than hard graphic shapes. Keep the scene calm, refined, and spacious, with the center open for headline text. Color direction: pale sand, estuary haze, sage wash, soft coastal light. Avoid cross-hatching, random strokes, literal scenery, and busy botanical detail.`
+
 ## Logo Symbol Prompt
 
 ### Use
