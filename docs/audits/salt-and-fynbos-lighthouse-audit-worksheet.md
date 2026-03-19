@@ -108,10 +108,72 @@ cd "\\wsl.localhost\Ubuntu\home\patrick_michael\Dev\malgas"
 ## Scoring Log
 | Route | Performance | Accessibility | Best Practices | SEO | Notes |
 | --- | --- | --- | --- | --- | --- |
-| `/` |  |  |  |  |  |
-| `/menu` |  |  |  |  |  |
-| `/about` |  |  |  |  |  |
-| `/contact` |  |  |  |  |  |
+| `/` | 85 | 100 | 100 | 100 | Mobile after shipped fixes |
+| `/menu` | 74 | 100 | 100 | 100 | Mobile after intro-image priority |
+| `/about` | 78 | 100 | 100 | 100 | Mobile after intro-image priority |
+| `/contact` | 76 | 100 | 100 | 100 | Mobile after intro-image priority |
+
+## Shipped Fixes
+- [x] Reduced root font preload count in [`layout.tsx`](/home/patrick_michael/Dev/malgas/src/app/layout.tsx)
+- [x] Disabled body font preload so it swaps in after first paint
+- [x] Added `priority` to the main above-the-fold intro image on `/menu`
+- [x] Added `priority` to the main above-the-fold intro image on `/about`
+- [x] Added `priority` to the main above-the-fold intro image on `/contact`
+- [x] Split page transitions so mobile no longer loads the Framer Motion transition path
+- [x] Disabled the home grass scene image on mobile so the asset is not requested there
+
+## Final Mobile Outcome
+### Home `/`
+- Started at `62`
+- Moved to `71` after shared font reduction
+- Moved to `79` after mobile-only transition split
+- Moved to `81` after removing the grass scene from mobile
+- Finished at `85` after disabling body-font preload
+
+### Summary
+- Accessibility, Best Practices, and SEO remained `100` throughout.
+- The highest-value wins came from shared loading changes, not from cosmetic simplification of the actual page content.
+- The remaining Lighthouse headroom is mostly in shared JavaScript and the remaining display-font preload.
+- No further changes were applied because the next gains would come with higher visual or architectural tradeoffs.
+
+## Round 1 Mobile Analysis
+### Summary
+- The audit problem is performance, not quality of markup or accessibility.
+- All four audited routes scored `100` for Accessibility, Best Practices, and SEO.
+- The home page is the clear outlier and should be treated separately from the other pages.
+
+### Recorded Metrics
+| Route | LCP | FCP | Speed Index | Notes |
+| --- | --- | --- | --- | --- |
+| `/` | `5.3s` | `1.0s` | `1.6s` | Home scene likely contributes meaningful extra cost |
+| `/menu` | `3.9s` | `0.8s` | `1.2s` | Shared loading cost plus intro image |
+| `/about` | `4.0s` | `0.8s` | `1.1s` | Shared loading cost plus intro image |
+| `/contact` | `3.8s` | `1.0s` | `1.3s` | Shared loading cost plus intro image |
+
+### What The Reports Consistently Flag
+- `Reduce unused JavaScript`
+- `Minimise main-thread work`
+- `Total Blocking Time`
+- `Largest Contentful Paint`
+
+### Repo-Specific Read
+1. Shared font loading in [`layout.tsx`](/home/patrick_michael/Dev/malgas/src/app/layout.tsx) is expensive.
+   Four font files are being preloaded very early, which adds a substantial shared cost before the pages settle.
+2. Shared client-side shell code is also expensive.
+   The likely contributors are:
+   - [`page-transition-shell.tsx`](/home/patrick_michael/Dev/malgas/src/components/page-transition-shell.tsx)
+   - [`site-header.tsx`](/home/patrick_michael/Dev/malgas/src/components/site-header.tsx)
+   - [`theme-toggle.tsx`](/home/patrick_michael/Dev/malgas/src/components/theme-toggle.tsx)
+   - [`menu-explorer.tsx`](/home/patrick_michael/Dev/malgas/src/components/menu-explorer.tsx)
+3. The home page has one extra cost the other routes do not:
+   the full-bleed grass scene image in [`globals.css`](/home/patrick_michael/Dev/malgas/src/app/globals.css), which loads outside `next/image`.
+4. `/menu`, `/about`, and `/contact` likely need `priority` on the true above-the-fold intro image.
+
+### Proposed Fix Order
+1. Reduce shared font loading cost in the root layout.
+2. Add `priority` to the actual intro LCP image on `/menu`, `/about`, and `/contact`.
+3. Reassess the home grass scene delivery only after the shared costs are reduced.
+4. Reassess the route transition shell if JavaScript remains the dominant cost.
 
 ## Global Known Risks
 - [ ] Home full-bleed grass scene background in [`globals.css`](/home/patrick_michael/Dev/malgas/src/app/globals.css) is a CSS background image, so it bypasses `next/image` optimization.

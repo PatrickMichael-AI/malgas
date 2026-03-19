@@ -1,55 +1,51 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
-import { usePathname } from "next/navigation"
+import { Suspense, lazy, useSyncExternalStore } from "react"
 
 type PageTransitionShellProps = {
   children: ReactNode
 }
 
-const transition = {
-  duration: 0.62,
-  ease: [0.22, 1, 0.36, 1],
-} as const
+const DesktopPageTransitionShell = lazy(() =>
+  import("@/components/desktop-page-transition-shell").then((module) => ({
+    default: module.DesktopPageTransitionShell,
+  }))
+)
 
-const settledState = {
-  opacity: 1,
-  y: 0,
-  scale: 1,
-  filter: "blur(0px)",
-} as const
+function subscribe(callback: () => void) {
+  if (typeof window === "undefined") {
+    return () => {}
+  }
 
-const enteringState = {
-  opacity: 0,
-  y: 36,
-  scale: 0.972,
-  filter: "blur(18px)",
-} as const
+  const mediaQuery = window.matchMedia("(min-width: 768px)")
+  mediaQuery.addEventListener("change", callback)
 
-const exitingState = {
-  opacity: 0,
-  y: -28,
-  scale: 1.012,
-  filter: "blur(12px)",
-} as const
+  return () => mediaQuery.removeEventListener("change", callback)
+}
+
+function getSnapshot() {
+  return window.matchMedia("(min-width: 768px)").matches
+}
+
+function getServerSnapshot() {
+  return false
+}
 
 export function PageTransitionShell({ children }: PageTransitionShellProps) {
-  const pathname = usePathname()
-  const reduceMotion = useReducedMotion()
+  const enableDesktopTransitions = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot
+  )
+
+  if (!enableDesktopTransitions) {
+    return <div>{children}</div>
+  }
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        initial={reduceMotion ? settledState : enteringState}
-        animate={settledState}
-        exit={reduceMotion ? settledState : exitingState}
-        transition={reduceMotion ? { duration: 0 } : transition}
-        className="relative will-change-[opacity,transform,filter]"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <Suspense fallback={<div>{children}</div>}>
+      <DesktopPageTransitionShell>{children}</DesktopPageTransitionShell>
+    </Suspense>
   )
 }

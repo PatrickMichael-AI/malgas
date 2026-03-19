@@ -14,21 +14,16 @@ import { themeInitScript } from "@/lib/theme"
 import "./globals.css"
 
 const display = localFont({
-  src: [
-    { path: "./fonts/PlayfairDisplaySC-Regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/PlayfairDisplaySC-Bold.ttf", weight: "700", style: "normal" },
-  ],
+  src: [{ path: "./fonts/PlayfairDisplaySC-Regular.ttf", weight: "400", style: "normal" }],
   variable: "--font-display",
   display: "swap",
 })
 
 const bodyFont = localFont({
-  src: [
-    { path: "./fonts/Karla-VariableFont_wght.ttf", weight: "200 800", style: "normal" },
-    { path: "./fonts/Karla-Italic-VariableFont_wght.ttf", weight: "200 800", style: "italic" },
-  ],
+  src: [{ path: "./fonts/Karla-VariableFont_wght.ttf", weight: "200 800", style: "normal" }],
   variable: "--font-body",
   display: "swap",
+  preload: false,
 })
 
 export const metadata: Metadata = {
